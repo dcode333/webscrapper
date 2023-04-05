@@ -17,5 +17,11 @@ text = p_tag.text
 def index():
   return jsonify(text)
 
+
+@app.route('/<int:count>')
+def get_results(count):
+  return jsonify({count:text})
+
+
 if __name__ == '__main__':
   app.run(port=5000)
